@@ -1,5 +1,5 @@
 ## Calculator
-from math import log, exp
+from math import log, exp, sqrt
 print(log(exp(1)))
 exp(1)
 
@@ -75,3 +75,80 @@ for i in range(1, 4):
     if i == 2: break
     print(i)
 print("-------\n")
+
+# Built-in Data Structures-------------------------------
+## Lists
+x = list(range(4))
+y = ["Another Hello World!"]
+print(len(x))
+print(len(y))
+print([l.split(" ") for l in y])
+print(x[-1])
+print(x[len(x) - 1])
+
+print(x * 5)
+print([0, 1] * 5)
+
+# Point to the same memory address
+x = [0]
+y = [x] * 5
+print(y)
+y[2] = 2
+print("x:", x)
+print("y:", y)
+y[0][0] = 3
+print("x:", x)
+print("y:", y)
+print("------")
+# Point to different memroy address
+x = [0]
+y = [x[:] for _ in range(5)]
+print(y)
+y[2] = 2
+print("x:", x)
+print("y:", y)
+y[0][0] = 3
+print("x:", x)
+print("y:", y)
+print("---------------")
+# List comprehension
+x = list(range(20))
+print([e for e in x if e % 2 == 0])
+print([e for e in x if int(sqrt(e))**2 == e])
+print([e**2 if e % 2 == 0 else -1 for e in x])
+print("----------------")
+# Some list operations
+x = [1, 2, 3]
+y = [5, 6]
+# append a single value
+x.append(4)
+print(x)
+# concatenate two lists
+x.extend(y)
+print(x)
+# Remove the last element
+x.pop()
+print(x)
+print("--------------")
+
+# Array
+import numpy as np
+array1 = np.reshape(list(range(1, 10)), (3, 3), order = "F")
+print(array1)
+array2 = np.reshape(list(range(1, 7)), (3, 2), order = "F")
+print(array2)
+print(np.dot(array1, array2))
+x = np.array(list(range(1, 4)))
+print(x + 1)
+print("--------------")
+# Data-frame
+import pandas as pd
+df1 = pd.DataFrame({'names':['A', 'B', 'C'], 'age':[10, 25, 37]})
+print(df1)
+x = np.random.normal(size=(3, 3))
+print(x)
+x = pd.DataFrame(x)
+print(x)
+x = np.asarray(x)
+print(x)
+print("--------------")

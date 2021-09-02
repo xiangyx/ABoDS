@@ -80,3 +80,27 @@ for(i in 1:3) {
     print(i)
 }
 cat("-------\n")
+
+# Built-in Data Structures-------------------------------
+## Vectors
+x = 1:5
+y = "Another Hello World!"
+print(length(x))
+print(length(y))
+print(nchar(y))
+print(x[-1])
+print(x[0])
+print(x[length(x) + 1])
+print(length(integer(0)))
+print(length(NA))
+print(rep(x, times = 5))
+print(rep(x, each = 5))
+cat("-------\n")
+
+# Array
+array1 <- array(1:9, c(3, 3))
+array2 <- array(1:6, c(3, 2))
+print(class(array1))
+print(array2)
+print(array1 %*% array2)
+cat("-------\n")
