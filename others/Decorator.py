@@ -21,7 +21,7 @@ def print_normalmix2():
         print(f"i = {i + 1}: {normal_mixture(mu, sigma, p)[0]:.4f}")
 
 @display_time
-def count_normalmix2_01(n_sim):
+def count_normalmix2_01(n_sim, mu, sigma, p):
     count = 0
     for i in range(n_sim):
         n = normal_mixture(mu, sigma, p)[0]
@@ -35,5 +35,5 @@ sigma = np.array([2, 4])
 p = 0.8
 n_sim = 100
 # print_normalmix2()
-count = count_normalmix2_01(n_sim)
+count = count_normalmix2_01(n_sim, mu, sigma, p)
 print(count)
